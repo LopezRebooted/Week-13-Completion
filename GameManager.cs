@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI restartText;
     public TextMeshProUGUI powerupText;
 
+    //Added AudioClips by Isaiah Lopez
+    public AudioClip powerup;
+    public AudioClip powerDown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,5 +104,17 @@ public class GameManager : MonoBehaviour
     public void UpdatePowerupText(string whichPowerup)
     {
         powerupText.text = whichPowerup;
+    }
+    //Added Play Audio by Isaiah Lopez
+    public void PlayPowerUp()
+    {
+        AudioSource.PlayClipAtPoint(powerup, Camera.main.transform.position);
+    }
+        
+
+
+    public void PlayPowerDown()
+    {
+        AudioSource.PlayClipAtPoint(powerDown, Camera.main.transform.position);
     }
 }
